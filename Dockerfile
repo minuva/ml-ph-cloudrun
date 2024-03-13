@@ -15,13 +15,13 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+RUN git clone https://huggingface.co/minuva/MiniLMv2-userflow-v2-onnx && rm -rf MiniLMv2-userflow-v2-onnx/.git
+RUN git clone https://huggingface.co/minuva/MiniLMv2-agentflow-v2-onnx && rm -rf MiniLMv2-agentflow-v2-onx/.git
 RUN git clone https://huggingface.co/minuva/MiniLMv2-goemotions-v2-onnx && rm -rf MiniLMv2-goemotions-v2-onnx/.git
 RUN git clone https://huggingface.co/minuva/MiniLMv2-toxic-jigsaw-lite-onnx && rm -rf MiniLMv2-toxic-jigsaw-lite-onnx/.git
 
 COPY . .
 
 RUN chmod +x run.sh
-
-EXPOSE 9612
 
 CMD ./run.sh

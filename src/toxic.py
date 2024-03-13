@@ -64,9 +64,8 @@ def get_task_user_agent_toxic(llm_input: str, llm_output, model: CustomDetoxify)
     agent_toxicity = model.predict(llm_output)
 
     return {
-        "user_toxicity": 1 if user_toxicity['toxicity'][0] >= 0.5 else 0,
-        "user_severe_toxicity": 1 if user_toxicity['severe_toxicity'][0] >= 0.5 else 0,
-        "agent_toxicity": 1 if agent_toxicity['toxicity'][0] >= 0.5 else 0,
-        "agent_severe_toxicity": 1 if agent_toxicity['severe_toxicity'][0] >= 0.5 else 0,
+        "user_toxic": 1 if user_toxicity['toxicity'][0] >= 0.5 else 0,
+        "user_severe_toxic": 1 if user_toxicity['severe_toxicity'][0] >= 0.5 else 0,
+        "agent_toxic": 1 if agent_toxicity['toxicity'][0] >= 0.5 else 0,
+        "agent_severe_toxic": 1 if agent_toxicity['severe_toxicity'][0] >= 0.5 else 0,
     }
-

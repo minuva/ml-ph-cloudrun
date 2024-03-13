@@ -53,7 +53,6 @@ def get_task_flow_labels(
 ) -> str:
     
     flow = predict(model, tokenizer, text)
-    print(flow)
     return flow[0]["labels"][0] if flow and flow[0]["labels"] else ""
 
 
