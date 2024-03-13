@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+.vscode/
+venv/
+.ipynb_checkpoints/
+*.pyc
+.envrc
+MiniLMv2-agentflow-v2-onnx
+MiniLMv2-goemotions-v2-onnx
+MiniLMv2-toxic-jigsaw-lite-onnx
+MiniLMv2-userflow-v2-onnx
+test.ipynb
